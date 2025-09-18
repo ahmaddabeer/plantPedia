@@ -1,0 +1,60 @@
+{
+
+    "data":[
+
+         {
+            "id": 105,
+            "common_name": "Dwarf Red Pygmy Japanese Maple",
+            "scientific_name": [
+                "Acer palmatum 'Red Pygmy'"
+            ],
+            "other_name": [],
+            "family": null,
+            "hybrid": null,
+            "authority": null,
+            "subspecies": null,
+            "cultivar": "Red Pygmy",
+            "variety": null,
+            "species_epithet": "palmatum",
+            "genus": "Acer",
+            "default_image": {
+                "license": 45,
+                "license_name": "Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)",
+                "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+                "original_url": "https://perenual.com/storage/species_image/105_acer_palmatum_red_pygmy/og/800px-Acer_Palmatum_27Red_Pygmy27.jpg",
+                "regular_url": "https://perenual.com/storage/species_image/105_acer_palmatum_red_pygmy/regular/800px-Acer_Palmatum_27Red_Pygmy27.jpg",
+                "medium_url": "https://perenual.com/storage/species_image/105_acer_palmatum_red_pygmy/medium/800px-Acer_Palmatum_27Red_Pygmy27.jpg",
+                "small_url": "https://perenual.com/storage/species_image/105_acer_palmatum_red_pygmy/small/800px-Acer_Palmatum_27Red_Pygmy27.jpg",
+                "thumbnail": "https://perenual.com/storage/species_image/105_acer_palmatum_red_pygmy/thumbnail/800px-Acer_Palmatum_27Red_Pygmy27.jpg"
+            }
+        },
+         {
+            "id": 201,
+            "common_name": "Deodar Cedar",
+            "scientific_name": [
+                "Cedrus deodara"
+            ],
+            "other_name": [
+                "Himalayan Cedar"
+            ],
+            "family": "Pinaceae",
+            "hybrid": null,
+            "authority": null,
+            "subspecies": null,
+            "cultivar": null,
+            "variety": null,
+            "species_epithet": "deodara",
+            "genus": "Cedrus",
+            "default_image": {
+                "license": 5,
+                "license_name": "Attribution-ShareAlike License",
+                "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+                "original_url": "https://perenual.com/storage/species_image/201_cedrus_deodara/og/48834607038_84597f56f4_b.jpg",
+                "regular_url": "https://perenual.com/storage/species_image/201_cedrus_deodara/regular/48834607038_84597f56f4_b.jpg",
+                "medium_url": "https://perenual.com/storage/species_image/201_cedrus_deodara/medium/48834607038_84597f56f4_b.jpg",
+                "small_url": "https://perenual.com/storage/species_image/201_cedrus_deodara/small/48834607038_84597f56f4_b.jpg",
+                "thumbnail": "https://perenual.com/storage/species_image/201_cedrus_deodara/thumbnail/48834607038_84597f56f4_b.jpg"
+            }
+        }
+    ]
+}
