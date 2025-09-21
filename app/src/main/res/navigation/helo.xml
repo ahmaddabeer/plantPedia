@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/helo"
+    app:startDestination="@id/home6">
+    <fragment
+        android:id="@+id/home6"
+        android:name="com.example.plantpedia.home.Home"
+        android:label="Home" />
+    <fragment
+        android:id="@+id/catogary2"
+        android:name="com.example.plantpedia.Catogray.Catogary"
+        android:label="fragment_catogary"
+        tools:layout="@layout/fragment_catogary" />
+    <fragment
+        android:id="@+id/wishList"
+        android:name="com.example.plantpedia.wishList.WishList"
+        android:label="WishList" />
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.example.plantpedia.profile.Profile"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>

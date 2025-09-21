@@ -21,7 +21,7 @@
         <ImageView
             android:id="@+id/detailimages"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="@dimen/_100sdp"
             android:scaleType="fitXY"
             />
 
@@ -35,8 +35,10 @@
             android:layout_gravity="center_vertical"
             android:gravity="center"
             android:padding="8dp"
+            android:fontFamily="@font/roboitalic"
             android:background="@color/green3"
             android:textStyle="bold"
+            android:textSize="@dimen/_12sdp"
             android:text="copyright" />
 
 

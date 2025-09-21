@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -52,11 +53,19 @@ dependencies {
     implementation ("com.android.volley:volley:1.2.1")
 
 
+    val newVersion= "2.7.3"
+
+    implementation("androidx.navigation:navigation-fragment-ktx:$newVersion")
+    implementation("androidx.navigation:navigation-ui-ktx:$newVersion")
+
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+
+    implementation(libs.androidx.fragment)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

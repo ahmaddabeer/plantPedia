@@ -27,6 +27,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/roboitalic"
+                android:textSize="@dimen/_15sdp"
                 android:layout_marginStart="10dp"
                 android:text="Explore" />
         </LinearLayout>
@@ -83,6 +85,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:fontFamily="@font/roboitalic"
                 android:textColor="@color/green4"
                 android:textStyle="bold" />
 
@@ -109,6 +112,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/quicksandvariable"
                         android:padding="4dp"
                         android:text="Common Names"
                         android:textStyle="italic" />
@@ -116,6 +120,8 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/quicksandvariable"
+
                         android:padding="4dp"
                         android:text="Year"
                         android:textStyle="italic" />
@@ -123,6 +129,8 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/quicksandvariable"
+
                         android:padding="4dp"
                         android:text="Scientific Name"
                         android:textStyle="italic" />
@@ -130,6 +138,8 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/quicksandvariable"
+
                         android:padding="4dp"
                         android:text="Bibilography"
                         android:textStyle="italic" />
@@ -137,6 +147,8 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/quicksandvariable"
+
                         android:padding="4dp"
                         android:text="Auther"
                         android:textStyle="italic" />
@@ -144,6 +156,8 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/quicksandvariable"
+
                         android:padding="4dp"
                         android:text="status"
                         android:textStyle="italic" />
@@ -151,6 +165,8 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/quicksandvariable"
+
                         android:padding="4dp"
                         android:text="Rank"
                         android:textStyle="italic" />
@@ -159,24 +175,32 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="4dp"
+                        android:fontFamily="@font/quicksandvariable"
+
                         android:text="Family Common Name"
                         android:textStyle="italic" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/quicksandvariable"
+
                         android:padding="4dp"
                         android:text="Family"
                         android:textStyle="italic" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/quicksandvariable"
+
                         android:padding="4dp"
                         android:text="Vegetable"
                         android:textStyle="italic" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/quicksandvariable"
+
                         android:padding="4dp"
                         android:text="Observations"
                         android:textStyle="italic" />
@@ -195,6 +219,7 @@
                         android:id="@+id/common_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/robonormal"
 
                         android:padding="4dp" />
 
@@ -202,24 +227,32 @@
                         android:id="@+id/year"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/robonormal"
+
                         android:padding="4dp" />
 
                     <TextView
                         android:id="@+id/sintificName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/robonormal"
+
                         android:padding="4dp" />
 
                     <TextView
                         android:id="@+id/bibilography"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/robonormal"
+
                         android:padding="4dp" />
 
                     <TextView
                         android:id="@+id/auther"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/robonormal"
+
                         android:padding="4dp" />
 
                     <TextView
@@ -232,28 +265,38 @@
                         android:id="@+id/rank"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/robonormal"
+
                         android:padding="4dp" />
 
                     <TextView
                         android:id="@+id/familyCommonName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/robonormal"
+
                         android:padding="4dp" />
 
                     <TextView
                         android:id="@+id/family"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/robonormal"
+
                         android:padding="4dp" />
                     <TextView
                         android:id="@+id/vegetable"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/robonormal"
+
                         android:padding="4dp" />
                     <TextView
                         android:id="@+id/observation"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/robonormal"
+
                         android:padding="4dp" />
 
 
@@ -275,6 +318,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:fontFamily="@font/roboitalic"
                 android:text="Show Image"
                 android:paddingEnd="10dp"
                 android:background="@color/green2"

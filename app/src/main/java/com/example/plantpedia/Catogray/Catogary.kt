@@ -52,7 +52,7 @@ class Catogary : Fragment() {
 
         val editsearch: EditText = view.findViewById(R.id.category_editsearch)
         val recyclerView: RecyclerView = view.findViewById(R.id.catgory_recyclerview)
-        recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
+        recyclerView.layoutManager = GridLayoutManager(requireContext(), 3)
 
         val loader: ProgressBar = view.findViewById(R.id.loader)
 
