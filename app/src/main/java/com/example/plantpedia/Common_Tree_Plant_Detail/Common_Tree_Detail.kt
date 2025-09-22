@@ -45,13 +45,16 @@ class Common_Tree_Detail : AppCompatActivity() {
 
 
 
+
     lateinit var binding: ActivityCommonTreeDetailBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCommonTreeDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        var sendtoimg: String = "helo"
+
+
+        var imgload:String = ""
 
         Log.d("kaliya","yes run ")
 
@@ -227,7 +230,11 @@ class Common_Tree_Detail : AppCompatActivity() {
                         var imageurl:String = data.getString("image_url")
                         Log.d("helo","$imageurl")
 
-                        sendtoimg = imageurl
+
+
+
+
+
 
 
 
@@ -246,6 +253,14 @@ class Common_Tree_Detail : AppCompatActivity() {
                         binding.family.setText(family)
                         binding.vegetable.setText(vegetable)
                         binding.observation.setText(observations)
+
+                        Glide.with(applicationContext)
+                            .load(imageurl)
+                            .placeholder(R.drawable.baseline_image_search_24)
+                            .error(R.drawable.baseline_running_with_errors_24)
+                            .diskCacheStrategy(DiskCacheStrategy.ALL) // Cache all versions
+                            .timeout(60000) // 60 seconds timeout
+                            .into(binding.commonTreeDetialImage)
 
 
                     } catch (e: Exception) {
@@ -266,20 +281,11 @@ class Common_Tree_Detail : AppCompatActivity() {
 
             })
 
-        try {
-            Glide.with(this)
-                .load(sendtoimg)
-                .placeholder(R.drawable.baseline_image_search_24)
-                .error(R.drawable.baseline_running_with_errors_24)
-                .diskCacheStrategy(DiskCacheStrategy.ALL) // Cache all versions
-                .timeout(60000) // 60 seconds timeout
-                .into(binding.commonTreeDetialImage)
 
-        }catch (e: Exception)
-        {
-            Toast.makeText(this,e.message.toString(),Toast.LENGTH_SHORT).show()
-            Log.d("helo",e.message.toString())
-        }
+
+
+
+
 
 
 
