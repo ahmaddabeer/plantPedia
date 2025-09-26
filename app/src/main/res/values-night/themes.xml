@@ -2,6 +2,19 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.PlantPedia" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">@color/Dark_Gray</item>
+        <item name="colorPrimaryVariant">@color/Dark_Gray</item>
+        <item name="android:statusBarColor">@color/Dark_Gray</item>
+        <item name="android:navigationBarColor">@color/Dark_Gray</item>
+        <item name="colorAccent">@color/Dark_Gray</item>
+        <item name="android:textColor">@color/Dark_Gray</item>
+        <item name="android:progressBackgroundTint">@color/black</item>
+
+
+
+
     </style>
+
+
+
 </resources>

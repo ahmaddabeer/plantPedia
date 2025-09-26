@@ -12,9 +12,11 @@
 
     >
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/textgradient"
+
         android:orientation="vertical">
 
 
@@ -26,23 +28,33 @@
             />
 
 
-
-
         <TextView
             android:id="@+id/copyright"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:gravity="center"
-            android:padding="8dp"
             android:fontFamily="@font/roboitalic"
-            android:background="@color/green3"
-            android:textStyle="bold"
-            android:textSize="@dimen/_12sdp"
-            android:text="copyright" />
+            android:gravity="center"
+            android:padding="@dimen/_4sdp"
+            android:text="copyright"
+            android:layout_below="@+id/detailimages"
+            android:textSize="@dimen/_12sdp" />
 
 
-    </LinearLayout>
+        <ImageButton
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_alignRight="@+id/detailimages"
+
+            android:background="@drawable/circle"
+            android:layout_marginEnd="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:src="@drawable/save"
+
+            />
+
+
+    </RelativeLayout>
 
 
 </androidx.cardview.widget.CardView>

@@ -8,8 +8,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.ProgressBar
+import android.widget.SpinnerAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
@@ -18,6 +20,8 @@ import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.JSONObjectRequestListener
 import com.example.plantpedia.R
+import com.example.plantpedia.databinding.FragmentCatogaryBinding
+import com.example.plantpedia.databinding.FragmentHomeBinding
 import org.json.JSONObject
 
 // TODO: Rename parameter arguments, choose names that match
@@ -35,6 +39,16 @@ class Catogary : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+
+    // assign the _binding variable initially to null and
+    // also when the view is destroyed again it has to be set to null
+    private var _binding: FragmentCatogaryBinding? = null
+
+    // with the backing property of the kotlin we extract
+    // the non null value of the _binding
+    private val binding get() = _binding!!
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -45,17 +59,32 @@ class Catogary : Fragment() {
 
     @SuppressLint("MissingInflatedId")
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        val view: View = inflater.inflate(R.layout.fragment_catogary, container, false)
 
-        val editsearch: EditText = view.findViewById(R.id.category_editsearch)
-        val recyclerView: RecyclerView = view.findViewById(R.id.catgory_recyclerview)
+        _binding = FragmentCatogaryBinding.inflate(inflater, container, false)
+
+        val editsearch: EditText = binding.categoryEditsearch
+
+        val recyclerView: RecyclerView = binding.catgoryRecyclerview
+
         recyclerView.layoutManager = GridLayoutManager(requireContext(), 3)
 
-        val loader: ProgressBar = view.findViewById(R.id.loader)
+        val SpinAdapter: ArrayAdapter<*>
 
+        val helo = arrayOf(
+
+
+            "Search By Page Number",
+            "Search By Common Name",
+            "Search By Sintific Name"
+        )
+
+
+        SpinAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, helo)
+
+        binding.searchTypeChange.adapter = SpinAdapter
+        val loader: ProgressBar = binding.loader
 
 
         val nameList = ArrayList<categoryModel>()
@@ -81,8 +110,8 @@ class Catogary : Fragment() {
 
                             val cn: String = obj.getString("scientific_name")
                             val imurl: String = obj.getString("image_url")
-                            val slug:String = obj.getString("slug")
-                            val plant = categoryModel(cn, imurl,slug)
+                            val slug: String = obj.getString("slug")
+                            val plant = categoryModel(cn, imurl, slug)
 
                             nameList.add(plant)
                         }
@@ -104,7 +133,7 @@ class Catogary : Fragment() {
         loadPlants(defaultUrl)
 
         // listener on EditText
-        editsearch.addTextChangedListener(object: TextWatcher {
+        editsearch.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 val number = s.toString().trim()
 
@@ -125,7 +154,7 @@ class Catogary : Fragment() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
 
-        return view
+        return binding.root
     }
 
     companion object {

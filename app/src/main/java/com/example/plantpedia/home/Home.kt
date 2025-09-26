@@ -147,6 +147,9 @@ class Home : Fragment() {
 
 
 
+
+
+
         binding.homeA.setOnClickListener {
             val nameList = arrayListOf(
                 "Alyssum",

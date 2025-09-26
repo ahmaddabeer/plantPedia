@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fragdrawablegradient"
     android:orientation="vertical"
     tools:context=".Common_Tree_Plant_Detail.Common_Tree_Detail">
 

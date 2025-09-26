@@ -13,12 +13,13 @@
     >
 
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:background="@drawable/textgradient"
 
-        android:background="@color/green2"
+
         >
 
         <ImageView
@@ -36,15 +37,26 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/_4sdp"
             android:text="item name"
+            android:layout_below="@+id/category_row_item_image"
             android:textSize="@dimen/_12sdp"
             android:fontFamily="@font/roboitalic"
-            android:textStyle="bold"
             android:gravity="center"
-
-
             android:textColor="@color/green4"/>
 
-    </LinearLayout>
+        <ImageButton
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_alignRight="@+id/category_row_item_image"
+
+            android:background="@drawable/circle"
+            android:layout_marginEnd="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:src="@drawable/save"
+
+            />
+
+
+    </RelativeLayout>
 
 
 </androidx.cardview.widget.CardView>

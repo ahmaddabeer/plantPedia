@@ -2,6 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/fragdrawablegradient"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
@@ -44,12 +45,11 @@
                         android:id="@+id/tvRose"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
                         android:clickable="true"
                         android:fontFamily="@font/marckscriptregular"
-                        android:padding="6dp"
+                        android:padding="@dimen/_5sdp"
+                        android:textSize="@dimen/_12sdp"
                         android:text="Rose" />
 
                     <TextView
@@ -57,11 +57,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="4dp"
+                        android:textSize="@dimen/_12sdp"
 
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
                         android:fontFamily="@font/marckscriptregular"
-                        android:padding="6dp"
+                        android:padding="@dimen/_5sdp"
                         android:text="Coconut" />
 
                     <TextView
@@ -70,10 +71,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
+                        android:textSize="@dimen/_12sdp"
 
                         android:background="@drawable/bg_search"
                         android:fontFamily="@font/marckscriptregular"
-                        android:padding="6dp"
+                        android:padding="@dimen/_5sdp"
                         android:text="Neem" />
 
                     <TextView
@@ -81,11 +83,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="4dp"
+                        android:textSize="@dimen/_12sdp"
 
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
                         android:fontFamily="@font/marckscriptregular"
-                        android:padding="6dp"
+                        android:padding="@dimen/_5sdp"
                         android:text="Mango" />
 
                     <TextView
@@ -93,11 +96,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="4dp"
+                        android:textSize="@dimen/_12sdp"
 
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
                         android:fontFamily="@font/marckscriptregular"
-                        android:padding="6dp"
+                        android:padding="@dimen/_5sdp"
                         android:text="Pomegranate" />
 
                     <TextView
@@ -106,10 +110,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
+                        android:textSize="@dimen/_12sdp"
 
                         android:background="@drawable/bg_search"
                         android:fontFamily="@font/marckscriptregular"
-                        android:padding="6dp"
+                        android:padding="@dimen/_5sdp"
                         android:text="Banyan" />
 
                     <TextView
@@ -119,6 +124,9 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
+                        android:fontFamily="@font/marckscriptregular"
+                        android:textSize="@dimen/_12sdp"
+
                         android:padding="6dp"
                         android:text="Peepal" />
 
@@ -129,6 +137,9 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
+                        android:fontFamily="@font/marckscriptregular"
+                        android:textSize="@dimen/_12sdp"
+
                         android:padding="6dp"
                         android:text="Tulsi" />
 
@@ -139,6 +150,9 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
+                        android:fontFamily="@font/marckscriptregular"
+                        android:textSize="@dimen/_12sdp"
+
                         android:padding="6dp"
                         android:text="Guava" />
 
@@ -149,6 +163,9 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
+                        android:fontFamily="@font/marckscriptregular"
+                        android:textSize="@dimen/_12sdp"
+
                         android:padding="6dp"
                         android:text="Ashoka" />
 
@@ -159,6 +176,9 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
+                        android:fontFamily="@font/marckscriptregular"
+                        android:textSize="@dimen/_12sdp"
+
                         android:padding="6dp"
                         android:text="Hibiscus" />
 
@@ -169,6 +189,9 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
+                        android:fontFamily="@font/marckscriptregular"
+                        android:textSize="@dimen/_12sdp"
+
                         android:padding="6dp"
                         android:text="Aloe Vera" />
 
@@ -179,6 +202,9 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
+                        android:fontFamily="@font/marckscriptregular"
+                        android:textSize="@dimen/_12sdp"
+
                         android:padding="6dp"
                         android:text="Banana" />
 
@@ -189,6 +215,9 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
+                        android:fontFamily="@font/marckscriptregular"
+                        android:textSize="@dimen/_12sdp"
+
                         android:padding="6dp"
                         android:text="Jackfruit" />
 
@@ -199,6 +228,9 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
+                        android:fontFamily="@font/marckscriptregular"
+                        android:textSize="@dimen/_12sdp"
+
                         android:padding="6dp"
                         android:text="Papaya" />
 
@@ -209,6 +241,9 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
+                        android:fontFamily="@font/marckscriptregular"
+                        android:textSize="@dimen/_12sdp"
+
                         android:padding="6dp"
                         android:text="Lemon" />
 
@@ -219,6 +254,9 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
+                        android:fontFamily="@font/marckscriptregular"
+                        android:textSize="@dimen/_12sdp"
+
                         android:padding="6dp"
                         android:text="Jamun" />
 
@@ -229,6 +267,9 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
+                        android:fontFamily="@font/marckscriptregular"
+                        android:textSize="@dimen/_12sdp"
+
                         android:padding="6dp"
                         android:text="Teak" />
 
@@ -239,6 +280,9 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
+                        android:fontFamily="@font/marckscriptregular"
+                        android:textSize="@dimen/_12sdp"
+
                         android:padding="6dp"
                         android:text="Sandalwood" />
 
@@ -249,6 +293,9 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
+                        android:fontFamily="@font/marckscriptregular"
+                        android:textSize="@dimen/_12sdp"
+
                         android:padding="6dp"
                         android:text="Eucalyptus" />
 
@@ -391,6 +438,8 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
+                        android:fontFamily="@font/susemonovariable"
+
                         android:gravity="center"
                         android:padding="6dp"
                         android:text="H"
@@ -403,6 +452,8 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
+                        android:fontFamily="@font/susemonovariable"
+
                         android:gravity="center"
                         android:padding="6dp"
                         android:text="I"
@@ -415,6 +466,8 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
+                        android:fontFamily="@font/susemonovariable"
+
                         android:gravity="center"
                         android:padding="6dp"
                         android:text="J"
@@ -427,6 +480,8 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
+                        android:fontFamily="@font/susemonovariable"
+
                         android:gravity="center"
                         android:padding="6dp"
                         android:text="K"
@@ -439,6 +494,8 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
+                        android:fontFamily="@font/susemonovariable"
+
                         android:gravity="center"
                         android:padding="6dp"
                         android:text="L"
@@ -451,6 +508,8 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
+                        android:fontFamily="@font/susemonovariable"
+
                         android:gravity="center"
                         android:padding="6dp"
                         android:text="M"
@@ -463,6 +522,8 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
+                        android:fontFamily="@font/susemonovariable"
+
                         android:gravity="center"
                         android:padding="6dp"
                         android:text="N"
@@ -475,6 +536,8 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
+                        android:fontFamily="@font/susemonovariable"
+
                         android:gravity="center"
                         android:padding="6dp"
                         android:text="O"
@@ -487,6 +550,8 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
+                        android:fontFamily="@font/susemonovariable"
+
                         android:gravity="center"
                         android:padding="6dp"
                         android:text="P"
@@ -499,6 +564,8 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
+                        android:fontFamily="@font/susemonovariable"
+
                         android:gravity="center"
                         android:padding="6dp"
                         android:text="Q"
@@ -511,6 +578,8 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
+                        android:fontFamily="@font/susemonovariable"
+
                         android:gravity="center"
                         android:padding="6dp"
                         android:text="R"
@@ -523,6 +592,8 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
+                        android:fontFamily="@font/susemonovariable"
+
                         android:gravity="center"
                         android:padding="6dp"
                         android:text="S"
@@ -535,6 +606,8 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
+                        android:fontFamily="@font/susemonovariable"
+
                         android:gravity="center"
                         android:padding="6dp"
                         android:text="T"
@@ -547,6 +620,8 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
+                        android:fontFamily="@font/susemonovariable"
+
                         android:gravity="center"
                         android:padding="6dp"
                         android:text="U"
@@ -559,6 +634,8 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
+                        android:fontFamily="@font/susemonovariable"
+
                         android:gravity="center"
                         android:padding="6dp"
                         android:text="V"
@@ -571,6 +648,8 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
+                        android:fontFamily="@font/susemonovariable"
+
                         android:gravity="center"
                         android:padding="6dp"
                         android:text="W"
@@ -583,6 +662,8 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
+                        android:fontFamily="@font/susemonovariable"
+
                         android:gravity="center"
                         android:padding="6dp"
                         android:text="X"
@@ -595,6 +676,8 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
+                        android:fontFamily="@font/susemonovariable"
+
                         android:gravity="center"
                         android:padding="6dp"
                         android:text="Y"
@@ -607,6 +690,8 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
                         android:background="@drawable/bg_search"
+                        android:fontFamily="@font/susemonovariable"
+
                         android:gravity="center"
                         android:padding="6dp"
                         android:text="Z"

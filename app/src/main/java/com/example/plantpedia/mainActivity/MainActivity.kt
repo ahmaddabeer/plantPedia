@@ -29,14 +29,6 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerView3, Home())
             .commit()
 
-
-//        val navController = findNavController(R.id.fragmentContainerView)
-
-//        loadFrag(Home(), 0)
-
-
-        //
-
         binding.bottomnavigatinView.setOnItemSelectedListener { menuItem ->
 
 

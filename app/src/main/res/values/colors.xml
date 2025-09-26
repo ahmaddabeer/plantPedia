@@ -14,4 +14,7 @@
     <color name="Dark_Gray">#202124</color>
     <color name="Mint_Green">#ecffdf</color>
     <color name="Fresh_Green">#b6dba0</color>
+
+    <color name="gradientback">#ffffff</color>
+
 </resources>

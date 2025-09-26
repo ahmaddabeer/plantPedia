@@ -2,7 +2,9 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.PlantPedia" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+         <item name="colorPrimary">@color/green4</item>
+         <item name="colorPrimaryVariant">@color/green4</item>
+         <item name="android:statusBarColor">@color/green4</item>
     </style>
 
     <style name="Theme.PlantPedia" parent="Base.Theme.PlantPedia" />
