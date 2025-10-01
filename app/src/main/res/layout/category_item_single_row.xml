@@ -4,7 +4,6 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:elevation="8dp"
-    app:cardCornerRadius="9dp"
     app:cardElevation="8dp"
     android:layout_margin="8dp"
     android:padding="8dp"
@@ -24,7 +23,7 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_110sdp"
+            android:layout_height="@dimen/_100sdp"
             android:scaleType="fitXY"
             android:id="@+id/category_row_item_image"
             android:layout_gravity="center"
@@ -44,6 +43,7 @@
             android:textColor="@color/green4"/>
 
         <ImageButton
+            android:id="@+id/faverateCatogaryScreen"
             android:layout_width="@dimen/_18sdp"
             android:layout_height="@dimen/_18sdp"
             android:layout_alignRight="@+id/category_row_item_image"

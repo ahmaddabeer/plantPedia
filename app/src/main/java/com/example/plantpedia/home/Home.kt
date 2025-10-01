@@ -3,12 +3,14 @@ package com.example.plantpedia.home
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.error.ANError
@@ -18,6 +20,11 @@ import com.example.plantpedia.Common_Tree_Plant_Detail.Common_Tree_Detail_Adapte
 import com.example.plantpedia.Common_Tree_Plant_Detail.Common_Tree_Detail_Model
 import com.example.plantpedia.R
 import com.example.plantpedia.databinding.FragmentHomeBinding
+import kotlinx.coroutines.CoroutineName
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.json.JSONObject
 
 // TODO: Rename parameter arguments, choose names that match
@@ -64,9 +71,11 @@ class Home : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
 
+
+
+
+
         binding.homeRecyclerView.layoutManager = GridLayoutManager(requireContext(), 3)
-
-
 
 
         //common tree and ploant coading handle
@@ -139,8 +148,62 @@ class Home : Fragment() {
 
         // alphabetical order item load---------------------------
 
+        //using coroutines to load by detault A
+
+
+
+
+
+//            CoroutineScope(Dispatchers.IO).launch {
+//
+//                val nameList = arrayListOf(
+//                    "Alyssum",
+//                    "Anise",
+//                    "apple",
+//                    "Apple Mint",
+//                    "acacia",
+//                    "almond",
+//                    "avacado",
+//                    "arjun",
+//                    "Aeonium",
+//                    "African Daisy",
+//                    "Ajuga"
+//                )
+//                val common_name = nameList.joinToString(",")
+//                recyclerviewload(common_name, binding.homeA, "A")
+//
+//
+//
+//            }
+
+
+
+
+
+
+
+
+
 
         // home screen load hote hi ak default a ko load karadiya
+
+
+
+        val nameList = arrayListOf(
+            "Alyssum",
+            "Anise",
+            "apple",
+            "Apple Mint",
+            "acacia",
+            "almond",
+            "avacado",
+            "arjun",
+            "Aeonium",
+            "African Daisy",
+            "Ajuga"
+        )
+        val common_name = nameList.joinToString(",")
+        recyclerviewload(common_name, binding.homeA, "A")
 
 
 
@@ -151,21 +214,28 @@ class Home : Fragment() {
 
 
         binding.homeA.setOnClickListener {
-            val nameList = arrayListOf(
-                "Alyssum",
-                "Anise",
-                "apple",
-                "Apple Mint",
-                "acacia",
-                "almond",
-                "avacado",
-                "arjun",
-                "Aeonium",
-                "African Daisy",
-                "Ajuga"
-            )
-            val common_name = nameList.joinToString(",")
-            recyclerviewload(common_name, binding.homeA, "A")
+
+
+
+                val nameList = arrayListOf(
+                    "Alyssum",
+                    "Anise",
+                    "apple",
+                    "Apple Mint",
+                    "acacia",
+                    "almond",
+                    "avacado",
+                    "arjun",
+                    "Aeonium",
+                    "African Daisy",
+                    "Ajuga"
+                )
+                val common_name = nameList.joinToString(",")
+                recyclerviewload(common_name, binding.homeA, "A")
+
+
+
+
         }
 
         binding.homeB.setOnClickListener {
@@ -432,8 +502,7 @@ class Home : Fragment() {
                 "Osmanthus",
 
 
-
-            )
+                )
 
 
             val name = nameList.joinToString(",")
@@ -443,13 +512,7 @@ class Home : Fragment() {
         binding.homeP.setOnClickListener {
 
             val nameList = arrayListOf(
-                "Primrose",
-                "Pomegranate",
-                "Peach",
-                "Persimmon",
-                "Plum",
-                "Pepper",
-                "Pine"
+                "Primrose", "Pomegranate", "Peach", "Persimmon", "Plum", "Pepper", "Pine"
             )
             val name = nameList.joinToString(",")
             recyclerviewload(name, binding.homeP, "P")
@@ -465,10 +528,7 @@ class Home : Fragment() {
 
         binding.homeR.setOnClickListener {
             val nameList = arrayListOf(
-                "Respberry",
-                "Rosemary",
-                "Rhododendron",
-                "Redwood"
+                "Respberry", "Rosemary", "Rhododendron", "Redwood"
             )
             val name = nameList.joinToString(",")
             recyclerviewload(name, binding.homeR, "R")
@@ -477,13 +537,7 @@ class Home : Fragment() {
         binding.homeS.setOnClickListener {
 
             val nameList = arrayListOf(
-                "Sunflower",
-                "Sassafras",
-                "Sage",
-                "Spinach",
-                "Sorghum",
-                "Sugarcane",
-                "Sesbania"
+                "Sunflower", "Sassafras", "Sage", "Spinach", "Sorghum", "Sugarcane", "Sesbania"
             )
 
             val name = nameList.joinToString(",")
@@ -492,8 +546,26 @@ class Home : Fragment() {
 
         binding.homeT.setOnClickListener {
             val nameList = arrayListOf(
-                "Tamarind", "Teak", "Tulip", "Tiger Lily", "Tomato", "Tansy", "Thyme", "Tibouchina", "Tilia", "Tarragon",
-                "Tree Fern", "Trillium", "Torenia", "Totara", "Toyon", "Tamarack", "Tabebuia", "Tsuga", "Thujopsis", "Tulip Tree"
+                "Tamarind",
+                "Teak",
+                "Tulip",
+                "Tiger Lily",
+                "Tomato",
+                "Tansy",
+                "Thyme",
+                "Tibouchina",
+                "Tilia",
+                "Tarragon",
+                "Tree Fern",
+                "Trillium",
+                "Torenia",
+                "Totara",
+                "Toyon",
+                "Tamarack",
+                "Tabebuia",
+                "Tsuga",
+                "Thujopsis",
+                "Tulip Tree"
             )
             val name = nameList.joinToString(",")
             recyclerviewload(name, binding.homeT, "T")
@@ -501,8 +573,26 @@ class Home : Fragment() {
 
         binding.homeU.setOnClickListener {
             val nameList = arrayListOf(
-                "Umbrella Pine", "Uva Ursi", "Ulex", "Ulluco", "Uncaria", "Usnea", "Urtica", "Ulex europaeus", "Umbellularia", "Urn Plant",
-                "Utricularia", "Uvularia", "Uapaca", "Ulmus", "Ulva", "Urena", "Urochloa", "Ulex minor", "Uapaca kirkiana", "Urvillea"
+                "Umbrella Pine",
+                "Uva Ursi",
+                "Ulex",
+                "Ulluco",
+                "Uncaria",
+                "Usnea",
+                "Urtica",
+                "Ulex europaeus",
+                "Umbellularia",
+                "Urn Plant",
+                "Utricularia",
+                "Uvularia",
+                "Uapaca",
+                "Ulmus",
+                "Ulva",
+                "Urena",
+                "Urochloa",
+                "Ulex minor",
+                "Uapaca kirkiana",
+                "Urvillea"
             )
             val name = nameList.joinToString(",")
             recyclerviewload(name, binding.homeU, "U")
@@ -511,8 +601,26 @@ class Home : Fragment() {
         binding.homeV.setOnClickListener {
 
             val nameList = arrayListOf(
-                "Varnishtree", "Verbena", "Viburnum", "Vitex", "Vinca", "Vanilla", "Velvet Bean", "Vaccinium", "Valerian", "Vetch",
-                "Venus Flytrap", "Victoria Regia", "Violet", "Vernonia", "Viburnum opulus", "Viola", "Vatica", "Vitis", "Velvetleaf", "Valeriana"
+                "Varnishtree",
+                "Verbena",
+                "Viburnum",
+                "Vitex",
+                "Vinca",
+                "Vanilla",
+                "Velvet Bean",
+                "Vaccinium",
+                "Valerian",
+                "Vetch",
+                "Venus Flytrap",
+                "Victoria Regia",
+                "Violet",
+                "Vernonia",
+                "Viburnum opulus",
+                "Viola",
+                "Vatica",
+                "Vitis",
+                "Velvetleaf",
+                "Valeriana"
             )
             val name = nameList.joinToString(",")
             recyclerviewload(name, binding.homeV, "V")
@@ -521,8 +629,26 @@ class Home : Fragment() {
         binding.homeW.setOnClickListener {
 
             val nameList = arrayListOf(
-                "Wild Iris", "Wisteria", "Willow", "Walnut", "Water Lily", "Wheat", "Wax Myrtle", "Weigela", "White Cedar", "Wolfberry",
-                "Wood Sorrel", "Wolfsbane", "Wahoo", "Western Red Cedar", "Wintergreen", "Woodbine", "Watercress", "Wallflower", "Wych Elm", "White Oak"
+                "Wild Iris",
+                "Wisteria",
+                "Willow",
+                "Walnut",
+                "Water Lily",
+                "Wheat",
+                "Wax Myrtle",
+                "Weigela",
+                "White Cedar",
+                "Wolfberry",
+                "Wood Sorrel",
+                "Wolfsbane",
+                "Wahoo",
+                "Western Red Cedar",
+                "Wintergreen",
+                "Woodbine",
+                "Watercress",
+                "Wallflower",
+                "Wych Elm",
+                "White Oak"
             )
             val name = nameList.joinToString(",")
             recyclerviewload(name, binding.homeW, "W")
@@ -531,8 +657,26 @@ class Home : Fragment() {
         binding.homeX.setOnClickListener {
 
             val nameList = arrayListOf(
-                "Xylosma", "Xerophyte", "Xanthium", "Xanthoceras", "Ximenia", "Xeranthemum", "Xanthosoma", "Xylopia", "Xanthorrhoea", "Xerophylla",
-                "Xylocarpus", "Xylocopa", "Xyris", "Xanthocarpus", "Xanthium strumarium", "Xenophyllum", "Xanthorrhoea australis", "Xiphidium", "Xylopia aethiopica", "Xerophyta"
+                "Xylosma",
+                "Xerophyte",
+                "Xanthium",
+                "Xanthoceras",
+                "Ximenia",
+                "Xeranthemum",
+                "Xanthosoma",
+                "Xylopia",
+                "Xanthorrhoea",
+                "Xerophylla",
+                "Xylocarpus",
+                "Xylocopa",
+                "Xyris",
+                "Xanthocarpus",
+                "Xanthium strumarium",
+                "Xenophyllum",
+                "Xanthorrhoea australis",
+                "Xiphidium",
+                "Xylopia aethiopica",
+                "Xerophyta"
             )
             val name = nameList.joinToString(",")
             recyclerviewload(name, binding.homeX, "X")
@@ -630,96 +774,77 @@ class Home : Fragment() {
         return binding.root
 //        return view
     }
-
     fun recyclerviewload(item: String, view: TextView, text: String) {
+        try {
+            val safeContext = context ?: return
 
+            Toast.makeText(safeContext, text, Toast.LENGTH_SHORT).show()
 
-        Toast.makeText(requireContext(), text, Toast.LENGTH_SHORT).show()
+            view.postDelayed({
+                if (!isAdded || _binding == null) return@postDelayed
+                view.background = safeContext.getDrawable(R.drawable.bg_search)
+            }, 300)
 
+            view.setBackgroundColor(safeContext.getColor(R.color.green3))
 
-        view.postDelayed(Runnable {
-            view.setBackgroundColor(view.context.getColor(R.color.white))
-            view.setBackgroundDrawable(requireContext().getDrawable(R.drawable.bg_search))
+            val url =
+                "https://trefle.io/api/v1/plants?token=od-gIUe-eHFoxtSQsJWcdtmtFsRckGQjJJHGP7YslmU&filter[common_name]=$item"
 
+            AndroidNetworking.get(url)
+                .setPriority(com.androidnetworking.common.Priority.HIGH)
+                .build()
+                .getAsJSONObject(object : JSONObjectRequestListener {
+                    override fun onResponse(p0: JSONObject?) {
+                        if (!isAdded || _binding == null) return
 
-        }, 300)
+                        try {
+                            val dataArray = p0!!.getJSONArray("data")
+                            val datalist = ArrayList<Common_Tree_Detail_Model>()
 
-        view.setBackgroundColor(view.context.getColor(R.color.green3))
+                            for (i in 0 until dataArray.length()) {
+                                val obj = dataArray.getJSONObject(i)
+                                val cn: String = obj.getString("common_name")
+                                val imurl: String = obj.getString("image_url")
+                                val plant = Common_Tree_Detail_Model(imurl, cn)
+                                datalist.add(plant)
+                            }
 
-        var url: String =
-            "https://trefle.io/api/v1/plants?token=od-gIUe-eHFoxtSQsJWcdtmtFsRckGQjJJHGP7YslmU&filter[common_name]=$item"
-
-        AndroidNetworking.get(url).setPriority(com.androidnetworking.common.Priority.HIGH).build()
-            .getAsJSONObject(object : JSONObjectRequestListener {
-
-
-                override fun onResponse(p0: JSONObject?) {
-
-                    try {
-
-                        var dataArray = p0!!.getJSONArray("data")
-
-
-                        val datalilst = ArrayList<Common_Tree_Detail_Model>()
-                        val adapter = Common_Tree_Detail_Adapter(requireContext(), datalilst)
-                        binding.homeRecyclerView.adapter = adapter
-
-                        // clear old data
-                        datalilst.clear()
-
-                        for (i in 0 until dataArray.length()) {
-                            val obj = dataArray.getJSONObject(i)
-                            val cn: String = obj.getString("common_name")
-                            val imurl: String = obj.getString("image_url")
-                            val slug: String = obj.getString("slug")
-                            val plant = Common_Tree_Detail_Model(imurl, cn)
-
-                            datalilst.add(plant)
+                            val adapter = Common_Tree_Detail_Adapter(safeContext, datalist)
+                            binding.homeRecyclerView.adapter = adapter
+                            binding.homeprogressbar.visibility = View.GONE
+                        } catch (e: Exception) {
+                            Toast.makeText(safeContext, e.message, Toast.LENGTH_SHORT).show()
                         }
-
-                        adapter.notifyDataSetChanged()
-
-
-                    } catch (e: Exception) {
-
-                        Toast.makeText(requireContext(), e.message.toString(), Toast.LENGTH_SHORT)
-                            .show()
                     }
 
-
-                }
-
-                override fun onError(p0: ANError?) {
-
-                    Toast.makeText(requireContext(), p0?.message.toString(), Toast.LENGTH_SHORT)
-                        .show()
-
-
-                }
-            })
-
-
+                    override fun onError(p0: ANError?) {
+                        if (!isAdded || _binding == null) return
+                        Toast.makeText(safeContext, p0?.message, Toast.LENGTH_SHORT).show()
+                    }
+                })
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
 
     fun helo(item: TextView, slug: String) {
+        try {
+            val safeContext = context ?: return
 
-        item.postDelayed(Runnable {
-            item.setBackgroundColor(item.context.getColor(R.color.white))
-            item.setBackgroundDrawable(requireContext().getDrawable(R.drawable.bg_search))
+            item.postDelayed({
+                if (!isAdded) return@postDelayed
+                item.background = safeContext.getDrawable(R.drawable.bg_search)
+            }, 200)
 
+            item.setBackgroundColor(safeContext.getColor(R.color.green3))
+            Toast.makeText(safeContext, "helo", Toast.LENGTH_SHORT).show()
 
-        }, 300)
-
-        item.setBackgroundColor(item.context.getColor(R.color.green3))
-
-        Toast.makeText(requireContext(), "helo", Toast.LENGTH_SHORT).show()
-
-
-        val iNext = Intent(requireContext(), Common_Tree_Detail::class.java)
-        iNext.putExtra("slug", "$slug")
-        startActivity(iNext)
-
-
+            val iNext = Intent(safeContext, Common_Tree_Detail::class.java)
+            iNext.putExtra("slug", slug)
+            startActivity(iNext)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
 
     companion object {
