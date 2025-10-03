@@ -26,8 +26,12 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerView3, Home())
-            .commit()
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView3, Home())
+                .commit()
+        }
+
 
         binding.bottomnavigatinView.setOnItemSelectedListener { menuItem ->
 

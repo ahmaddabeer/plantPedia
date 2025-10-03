@@ -1,60 +1,132 @@
 package com.example.plantpedia.profile
 
+import AppDatabase
+import ProfileEntity
+import android.app.Activity
+import android.content.Intent
+import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import android.widget.ImageButton
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
+import androidx.room.Room
 import com.example.plantpedia.R
+import com.example.plantpedia.databinding.FragmentProfileBinding
+import de.hdodenhof.circleimageview.CircleImageView
+import kotlinx.coroutines.launch
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [Profile.newInstance] factory method to
- * create an instance of this fragment.
- */
 class Profile : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+    private var _binding: FragmentProfileBinding? = null
+    private val binding get() = _binding!!
+
+    private lateinit var dialogImage: CircleImageView
+    private var selectedImageUri: Uri? = null   // 📌 Save selected image URI
+
+    // 📌 ActivityResultLauncher for Gallery + Camera
+    private val imageChooserLauncher =
+        registerForActivityResult(androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK && result.data != null) {
+                val data = result.data
+                val selectedUri: Uri? = data?.data
+
+                if (selectedUri != null) {
+                    // Gallery se aaya
+                    dialogImage.setImageURI(selectedUri)
+                    selectedImageUri = selectedUri
+                } else {
+                    // Camera se aaya (Bitmap milta hai)
+                    val extras = data?.extras
+                    val imageBitmap = extras?.get("data") as? Bitmap
+                    if (imageBitmap != null) {
+                        dialogImage.setImageBitmap(imageBitmap)
+
+                        // bitmap ko temporary save karke URI banani hogi (abhi simple null rakha hai)
+                        selectedImageUri = null
+                    }
+                }
+            }
         }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
-    }
+        _binding = FragmentProfileBinding.inflate(inflater, container, false)
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Profile.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Profile().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+
+
+        binding.btnEditProfile.setOnClickListener {
+            val builder = AlertDialog.Builder(requireContext())
+            val customLayout: View = layoutInflater.inflate(R.layout.edit_profile_dilog, null)
+            builder.setView(customLayout)
+            val dialog = builder.create()
+            dialog.show()
+
+            val imgbuttonBack: ImageButton = customLayout.findViewById(R.id.profiledilogBackButton)
+            imgbuttonBack.setOnClickListener { dialog.dismiss() }
+
+            val imgcorrectButton: ImageButton = customLayout.findViewById(R.id.profiledilogCorrect)
+            dialogImage = customLayout.findViewById(R.id.profileDilog_image)
+
+            // 📌 Open chooser on click
+            dialogImage.setOnClickListener {
+                Toast.makeText(context, "Loading Media", Toast.LENGTH_SHORT).show()
+
+                // Gallery intent
+                val galleryIntent =
+                    Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+
+                // Camera intent
+                val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+
+                // Chooser with both
+                val chooser = Intent.createChooser(galleryIntent, "Select Image")
+                chooser.putExtra(Intent.EXTRA_INITIAL_INTENTS, arrayOf(cameraIntent))
+
+                imageChooserLauncher.launch(chooser)
+            }
+
+            imgcorrectButton.setOnClickListener {
+                val firstName: EditText = customLayout.findViewById(R.id.edtFirstName)
+                val lastName: EditText = customLayout.findViewById(R.id.edtLastName)
+                val gender: EditText = customLayout.findViewById(R.id.edtGender)
+                val phoneNumber: EditText = customLayout.findViewById(R.id.edtPhone)
+
+                // 📌 Room Database instance
+                val db = Room.databaseBuilder(
+                    requireContext(),
+                    AppDatabase::class.java,
+                    "app_db"
+                ).build()
+
+                // 📌 Save Profile Data
+                lifecycleScope.launch {
+                    val profile = ProfileEntity(
+                        firstName = firstName.text.toString(),
+                        lastName = lastName.text.toString(),
+                        gender = gender.text.toString(),
+                        phone = phoneNumber.text.toString(),
+                        imageUri = selectedImageUri?.toString()
+                    )
+                    db.profileDao().insertOrUpdate(profile)
+
+                    requireActivity().runOnUiThread {
+                        Toast.makeText(requireContext(), "Profile Updated!", Toast.LENGTH_SHORT).show()
+                        dialog.dismiss()
+                    }
                 }
             }
+        }
+
+        return binding.root
     }
 }

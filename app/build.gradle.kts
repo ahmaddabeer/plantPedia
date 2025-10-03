@@ -53,6 +53,10 @@ dependencies {
     implementation ("com.google.mlkit:image-labeling:17.0.9")
     implementation ("com.android.volley:volley:1.2.1")
 
+    // circular image dependency
+
+    implementation("de.hdodenhof:circleimageview:3.1.0")
+
 
     val newVersion= "2.7.3"
 
@@ -76,6 +80,10 @@ dependencies {
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2")
+
+    //contrycodepicker library
+
+    implementation("com.hbb20:ccp:2.5.0")
 
 
     implementation(libs.androidx.core.ktx)
