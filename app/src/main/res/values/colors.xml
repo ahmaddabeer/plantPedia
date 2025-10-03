@@ -18,4 +18,11 @@
 
     <color name="gradientback">#ffffff</color>
 
+
+    <color name="teal_200">#ff03dac5</color>
+    <color name="teal700">#ff018786</color>
+    <color name="lavender">#8692f7</color>
+    <color name="purple_700">#ff6200ee</color>
+    <color name="purple_200">#ffbb86fc</color>
+
 </resources>
